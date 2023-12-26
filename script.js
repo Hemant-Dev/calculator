@@ -11,6 +11,7 @@ const numberButtons = document.querySelectorAll('[data-number]');
 const operatorButtons = document.querySelectorAll('[data-operator]');
 const equalsBtn = document.querySelector('#equalsBtn');
 const clearBtn = document.querySelector('#clearBtn');
+const pointBtn = document.querySelector('#pointBtn');
 const lastOperationScreen = document.querySelector('.lastOperationScreen');
 const currentOperationScreen = document.querySelector('.currentOperationScreen');
 
@@ -55,11 +56,15 @@ function evaluate(){
         return;
     }
     secondOperand = currentOperationScreen.textContent;
-    currentOperationScreen.textContent = `${operate(currentOperation, firstOperand, secondOperand)}`;
+    currentOperationScreen.textContent = roundResult(
+        operate(currentOperation, firstOperand, secondOperand)
+    )
     lastOperationScreen.textContent = `${firstOperand} ${currentOperation} ${secondOperand}`;
     currentOperation = null;
 }
-
+function roundResult(result){
+    return Math.round(result * 1000) / 1000;
+}
 
 //Operations 
 function add(num1, num2){

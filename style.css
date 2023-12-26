@@ -86,7 +86,8 @@
 
 .subtract,
 .multiply,
-.divide{
+.divide,
+.point{
     padding-left: 17px;
     padding-right: 17px;
 }
