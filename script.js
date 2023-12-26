@@ -14,7 +14,6 @@ const clearBtn = document.querySelector('#clearBtn');
 const lastOperationScreen = document.querySelector('.lastOperationScreen');
 const currentOperationScreen = document.querySelector('.currentOperationScreen');
 
-
 equalsBtn.addEventListener('click',  evaluate);
 clearBtn.addEventListener('click', clear);
 

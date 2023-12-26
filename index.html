@@ -8,7 +8,7 @@
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <h1>Calculator</h1>
+    <h1 class="heading">Calculator</h1>
     <div class="container">
         <div class="calculator-body">
             <div class="calculator-screen">
@@ -26,18 +26,26 @@
                     <button class="number" data-number>7</button>
                     <button class="number" data-number>8</button>
                     <button class="number" data-number>9</button>
-                    <button class="number" data-number>0</button>
                 </div>
                 <div class="operations-group">
                     <button class="add operand" data-operator>+</button>
+                    <button class="clear operand" id="clearBtn">C</button>
                     <button class="subtract operand" data-operator>-</button>
                     <button class="multiply operand" data-operator>*</button>
                     <button class="divide operand" data-operator>/</button>
-                    <button class="equals operand" id="equalsBtn">=</button>
-                    <button class="clear operand" id="clearBtn">C</button>
+                    <button class="number operand" data-number>0</button>
+                    <button class="equals operand" id="equalsBtn">=</button>   
                 </div>
             </div>
         </div>
+    </div>
+    <div class="footer">
+        <p>
+            Copyright © Hemant - Dev
+            <script>
+                document.write(new Date().getFullYear());
+            </script>
+        </p>
     </div>
 </body>
 </html>
