@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Calculator Design Section */
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator-body{
+    background-color: black;
+    width: 300px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.calculator-screen{
+    background-color: red;
+    height: 30%;
+    margin: 10px;
+}
+
+.calculator-buttons{
+    background-color: lime;
+    height: 70%;
+    margin: 10px;
+    display: flex;
+    flex-flow: row wrap;
+
+}
+.operations-group{
+    /* display: flex; */
+    /* flex-flow: row wrap; */
+    margin-top: 40px;
+    width: 40%;
+}
+.numbers-group{
+    /* margin: 10px; */
+    margin-top: 40px;
+    width: 60%;
+    
+}
+.number{
+    padding: 15px;
+    border-radius: 5px;
+    margin: 2px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.operand{
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 10px;
+}
+.calculator-screen{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.calculator-screen .lastOperationScreen,
+.calculator-screen .currentOperationScreen{
+    text-align: right;
+}
