@@ -16,6 +16,7 @@ const deleteBtn = document.querySelector('#deleteBtn');
 const lastOperationScreen = document.querySelector('.lastOperationScreen');
 const currentOperationScreen = document.querySelector('.currentOperationScreen');
 
+window.addEventListener('keydown', handleKeyboardInput);
 equalsBtn.addEventListener('click',  evaluate);
 clearBtn.addEventListener('click', clear);
 deleteBtn.addEventListener('click', deleteNumber);
@@ -72,6 +73,15 @@ function evaluate(){
 }
 function roundResult(result){
     return Math.round(result * 1000) / 1000;
+}
+function handleKeyboardInput(e){
+    // console.log(e.key);
+    if(e.key >= 0 && e.key <= 9) appendNumber(e.key);
+    if(e.key === '.') appendNumber(e.key);
+    if(e.key === '=' || e.key === 'Enter') evaluate();
+    if(e.key === 'Backspace') deleteNumber();
+    if(e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/')
+        setOperation(e.key);
 }
 
 //Operations 
