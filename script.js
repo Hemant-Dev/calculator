@@ -12,12 +12,14 @@ const operatorButtons = document.querySelectorAll('[data-operator]');
 const equalsBtn = document.querySelector('#equalsBtn');
 const clearBtn = document.querySelector('#clearBtn');
 const pointBtn = document.querySelector('#pointBtn');
+const deleteBtn = document.querySelector('#deleteBtn');
 const lastOperationScreen = document.querySelector('.lastOperationScreen');
 const currentOperationScreen = document.querySelector('.currentOperationScreen');
 
 equalsBtn.addEventListener('click',  evaluate);
 clearBtn.addEventListener('click', clear);
-
+deleteBtn.addEventListener('click', deleteNumber);
+// pointBtn.addEventListener('click', checkPoint);
 
 numberButtons.forEach((button) => {
     button.addEventListener('click', () => appendNumber(button.textContent))
@@ -25,10 +27,15 @@ numberButtons.forEach((button) => {
 operatorButtons.forEach((button) => {
     button.addEventListener('click', () => setOperation(button.textContent))
 });
+
 function appendNumber(number){
     if(currentOperationScreen.textContent === '0' || shouldResetScreen)
         resetScreen()
     currentOperationScreen.textContent += number;
+}
+function deleteNumber(){;
+    // console.log(currentOperationScreen.textContent.slice(0, -1));
+    currentOperationScreen.textContent = currentOperationScreen.textContent.slice(0, -1);
 }
 function setOperation(operator){
     if(currentOperation !== null) evaluate();
@@ -49,6 +56,7 @@ function clear(){
     secondOperand = '';
     currentOperation = null;
 }
+
 function evaluate(){
     if(currentOperation === null || shouldResetScreen) return;
     if(currentOperation === '/' && currentOperationScreen.textContent === '0'){
